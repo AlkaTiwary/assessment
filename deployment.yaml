@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quotes1
+  labels:
+    app: mimi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mimi
+  template:
+    metadata:
+      labels:
+        app: mimi
+    spec:
+      containers:
+      - name: mimi
+        image: alkatiwary/sys:0.1
+        ports:
+        - containerPort: 80
